@@ -1,3 +1,4 @@
+using E_Commerce_System.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace E_Commerce_System.Models
 {
-    public class Cart
+    public class Cart : ICart
     {
         private readonly List<CartItem> _items = new List<CartItem>();
         public IEnumerable<CartItem> Items => _items;
@@ -23,10 +24,8 @@ namespace E_Commerce_System.Models
                 _items.Add(new CartItem(product, quantity));
             }
         }
-        public void RemoveItem(string  name)
-        {
-            _items.RemoveAll(i => i.Product.Name == name);
-        }
+        public void RemoveItem(string  name) =>_items.RemoveAll(i => i.Product.Name == name);
+
         public decimal CalculateTotal() => _items.Sum(item => item.GetSubTotal());
     }
 }

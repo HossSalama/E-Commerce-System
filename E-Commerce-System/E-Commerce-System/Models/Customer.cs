@@ -1,3 +1,4 @@
+using E_Commerce_System.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,13 @@ namespace E_Commerce_System.Models
     {
         public string Name { get; set; }
         public string Email { get; set; }
-        public Cart Cart { get; private set; }
+        public ICart Cart { get; private set; }
 
-        public Customer(string name, string email)
+        public Customer(string name, string email , ICart cart)
         {
             Name = name;
             Email = email;
-            Cart = new Cart(); 
+            Cart = cart; 
         }
     }
 }
