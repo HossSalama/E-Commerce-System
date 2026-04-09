@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_Commerce_System
 {
-    public interface ITaxStrategy
+    internal class Logger
     {
-        double ApplyTax(double total);
     }
 }
