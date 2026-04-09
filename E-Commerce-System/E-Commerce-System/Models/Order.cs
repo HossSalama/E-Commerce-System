@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_Commerce_System
 {
-    public interface IDiscountStrategy
+    internal class Order
     {
-        double ApplyDiscount(double total);
     }
-
 }
